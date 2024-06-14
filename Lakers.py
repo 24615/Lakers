@@ -286,7 +286,7 @@ def add_player():
    #Input Player data
    while True:
       try:
-          player_id = int(input('Enter Player ID must be an integer and greater than 19: '))         
+          player_id = int(input('Enter Player ID must be an integer and greater than 19: '))       
           name = input('Enter Player name: ')
           position = input('Enter Player position: ')
           jersey_number = int(input('Enter Player jersey number: '))
@@ -299,7 +299,10 @@ def add_player():
           print(Fore.GREEN+ "Player added successfully")
           break 
       except ValueError:
-         print(Fore.RED + f"Invalid input. Please try again.")
+         print(Fore.RED + f"Invalid input.")
+         quit=input("Type"+ Fore.RED +' exit' + Fore.WHITE+ " to quit or Press " +Fore.RED +'enter' + Fore.WHITE+" to try again: ")
+         if quit=='exit':
+            break
       except sqlite3.Error:
           print(Fore.RED + f"Database error")
           break 
@@ -333,7 +336,10 @@ def delete_player():
       print(Fore.GREEN+ "Player deleted successfully")
       break
      except ValueError:
-         print(Fore.RED + f"Invalid input. Please try again.")    
+         print(Fore.RED + f"Invalid input. Please try again.")  
+         quit=input("Type"+ Fore.RED +' exit' + Fore.WHITE+ " to quit or Press " +Fore.RED +'enter' + Fore.WHITE+" to try again: ")
+         if quit=='exit':
+            break  
    db.close
    input("Press Enter to continue...")
 
@@ -404,5 +410,5 @@ What would you like to do.
       else:
          print(Fore.RED +'That was not an option\n')
          input("Press Enter to continue...")
-     
+       
      
