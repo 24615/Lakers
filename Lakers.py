@@ -19,7 +19,6 @@ init(autoreset=True)
 DATABASE="/Users/jaydenzheng/Desktop/Database/Lakers/Database.db"
 
 
-
 #Login
 def login():
    while True:
